@@ -45,6 +45,8 @@ export default {
   methods: {
     submitHandler() {
       console.log("email: ", this.email);
+      console.log("password: ", this.password);
+      console.log("passwordConfirmation: ", this.passwordConfirmation);
       console.log("submit");
     },
   },
