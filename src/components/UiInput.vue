@@ -1,10 +1,9 @@
 <template>
   <div class="form__control">
     <input
-      :type="type"
+      type="type"
       :placeholder="placeholder"
-      :id="id"
-      :value="modelValue"
+      :value="value"
       @input="change"
     />
     <p class="text-error" v-if="error">{{ error }}</p>
@@ -13,17 +12,17 @@
 
 <script>
 export default {
-  emits: ["update:modelValue"],
+  emits: ["update:value"],
   props: {
     type: String,
     placeholder: String,
     id: String,
-    modelValue: String,
+    value: String,
     error: String,
   },
   methods: {
     change(event) {
-      this.$emit("update:modelValue", event.target.value);
+      this.$emit("update:value", event.target.value);
     },
   },
 };

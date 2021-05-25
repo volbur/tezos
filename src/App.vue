@@ -1,24 +1,28 @@
 <template>
   <form class="form" @submit.prevent="submitHandler">
     <h2 class="form__title">Login</h2>
+    <h3>email: {{ email }}</h3>
     <ui-input
       type="email"
       placeholder="Email"
       :error="errors.email"
-      v-model="email"
+      v-model:value="email"
     ></ui-input>
+
     <ui-input
       type="password"
       placeholder="Password"
       :error="errors.password"
       v-model="password"
     ></ui-input>
+
     <ui-input
       type="password"
       placeholder="Password confirmation"
       :error="errors.passwordConfirmation"
       v-model="passwordConfirmation"
     ></ui-input>
+
     <button class="btn" type="submit">Submit</button>
   </form>
 </template>
@@ -26,7 +30,6 @@
 
 <script>
 import UiInput from "./components/UiInput";
-
 export default {
   name: "App",
   data() {
