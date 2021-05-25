@@ -1,28 +1,83 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <form class="form" @submit.prevent="submitHandler">
+    <h2 class="form__title">Login</h2>
+    <ui-input
+      type="email"
+      placeholder="Email"
+      :error="errors.email"
+      v-model="email"
+    ></ui-input>
+    <ui-input
+      type="password"
+      placeholder="Password"
+      :error="errors.password"
+      v-model="password"
+    ></ui-input>
+    <!-- <ui-input
+      type="password"
+      placeholder="Password confirmation"
+      :error="errors.passwordConfirmation"
+      v-model="passwordConfirmation"
+    ></ui-input> -->
+    <button class="btn">Submit</button>
+  </form>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UiInput from "./components/UiInput";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      email: "",
+      errors: {
+        email: "Invalid email",
+        password:
+          "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.",
+        passwordConfirmation: "Password doesn’t match",
+      },
+    };
+  },
+  methods: {
+    submitHandler() {
+      console.log("submit");
+    },
+  },
   components: {
-    HelloWorld
-  }
-}
+    UiInput,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.form {
+  margin: 0 auto;
+  padding: 37px 108px 40px;
+  width: 390px;
+  background: #ecf4ff;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+.form__title {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  color: #122232;
+}
+.btn {
+  display: block;
+  margin: 0 auto;
+  padding: 11px 80px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #ffbf2b;
+  color: #fff;
+  cursor: pointer;
 }
 </style>
