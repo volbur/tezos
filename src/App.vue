@@ -13,12 +13,11 @@
       :error="errors.password"
       v-model="password"
     ></ui-input>
-    <!-- <ui-input
+    <ui-input
       type="password"
       placeholder="Password confirmation"
       :error="errors.passwordConfirmation"
-      v-model="passwordConfirmation"
-    ></ui-input> -->
+    ></ui-input>
     <button class="btn">Submit</button>
   </form>
 </template>
@@ -32,6 +31,8 @@ export default {
   data() {
     return {
       email: "",
+      password: "",
+      passwordConfirmation: "",
       errors: {
         email: "Invalid email",
         password:
