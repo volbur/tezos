@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     submitHandler() {
+      console.log("email: ", this.email);
       console.log("submit");
     },
   },
@@ -60,6 +61,9 @@ export default {
   background: #ecf4ff;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+}
+.form__control:not(:last-child) {
+  margin-bottom: 30px;
 }
 .form__title {
   text-align: center;

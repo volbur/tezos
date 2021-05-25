@@ -1,5 +1,5 @@
 <template>
-  <div :key="Math.random()">
+  <div class="form__control">
     <input
       :type="type"
       :placeholder="placeholder"
