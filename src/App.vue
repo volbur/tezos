@@ -17,8 +17,9 @@
       type="password"
       placeholder="Password confirmation"
       :error="errors.passwordConfirmation"
+      v-model="passwordConfirmation"
     ></ui-input>
-    <button class="btn">Submit</button>
+    <button class="btn" type="submit">Submit</button>
   </form>
 </template>
 
