@@ -1,7 +1,7 @@
 <template>
   <div class="form__control">
     <input
-      type="type"
+      :type="type"
       :placeholder="placeholder"
       :value="value"
       @input="change"
@@ -14,7 +14,10 @@
 export default {
   emits: ["update:value"],
   props: {
-    type: String,
+    type: {
+      type: String,
+      default: "button",
+    },
     placeholder: String,
     value: String,
     error: String,
