@@ -37,16 +37,19 @@ export default {
       password: "",
       passwordConfirmation: "",
       errors: {
-        email: "Invalid email",
-        password:
-          "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.",
-        passwordConfirmation: "Password doesn’t match",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
       },
     };
   },
   computed: {
     isValidEmail() {
-      return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(this.email);
+      const isValid = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
+        this.email
+      );
+
+      return isValid;
     },
     isValidPassword() {
       return this.password === "2";
@@ -65,6 +68,14 @@ export default {
   },
   methods: {
     submitHandler() {
+      this.errors.email = this.isValidEmail ? "" : "Invalid email";
+      this.errors.password = this.isValidPassword
+        ? ""
+        : "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.";
+      this.errors.passwordConfirmation = this.isValidPasswordConfirmation
+        ? ""
+        : "Password doesn’t match";
+
       if (this.isValidForm) {
         console.log("email: ", this.email);
         console.log("password: ", this.password);
