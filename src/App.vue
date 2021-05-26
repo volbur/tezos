@@ -63,6 +63,7 @@ export default {
       return this.password === "2";
     },
     isValidPasswordConfirmation() {
+      if (!this.isValidPassword) return false;
       return this.password === this.passwordConfirmation;
     },
     isValidForm() {
