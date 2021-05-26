@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  emits: ["update:value"],
   props: {
     isValid: Boolean,
     type: {
