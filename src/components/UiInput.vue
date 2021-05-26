@@ -9,6 +9,11 @@
     <p class="text-error" v-if="error">{{ error }}</p>
   </div>
 </template>
+// Паша-Настя, [25.05.21 21:59]
+// у тебя там @input=‘change’
+
+// Паша-Настя, [25.05.21 22:00]
+// change(event) { this.$emit(‘input’, event.target.value) }
 
 <script>
 export default {
@@ -16,13 +21,12 @@ export default {
   props: {
     type: String,
     placeholder: String,
-    id: String,
     value: String,
     error: String,
   },
   methods: {
     change(event) {
-      this.$emit("update:value", event.target.value);
+      this.$emit("input", event.target.value);
     },
   },
 };

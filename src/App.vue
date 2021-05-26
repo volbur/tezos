@@ -3,10 +3,10 @@
     <h2 class="form__title">Login</h2>
     <h3>email: {{ email }}</h3>
     <ui-input
-      type="email"
+      type="text"
       placeholder="Email"
       :error="errors.email"
-      v-model:value="email"
+      v-model="email"
     ></ui-input>
 
     <ui-input
