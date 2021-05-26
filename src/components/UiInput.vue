@@ -9,11 +9,6 @@
     <p class="text-error" v-if="error">{{ error }}</p>
   </div>
 </template>
-// Паша-Настя, [25.05.21 21:59]
-// у тебя там @input=‘change’
-
-// Паша-Настя, [25.05.21 22:00]
-// change(event) { this.$emit(‘input’, event.target.value) }
 
 <script>
 export default {
