@@ -1,7 +1,7 @@
 <template>
   <div class="form__control">
     <input
-      :class="{ invalid: error }"
+      :class="{ invalid: error, valid: isValid }"
       :type="type"
       :placeholder="placeholder"
       :value="value"
@@ -15,6 +15,7 @@
 export default {
   emits: ["update:value"],
   props: {
+    isValid: Boolean,
     type: {
       type: String,
       default: "button",

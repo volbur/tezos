@@ -2,6 +2,7 @@
   <form class="form" @submit.prevent="submitHandler">
     <h2 class="form__title">Login</h2>
     <ui-input
+      :isValid="valid.email"
       type="text"
       placeholder="Email"
       :error="errors.email"
@@ -33,6 +34,11 @@ export default {
   name: "App",
   data() {
     return {
+      valid: {
+        email: false,
+        password: false,
+        passwordConfirmation: false,
+      },
       email: "",
       password: "",
       passwordConfirmation: "",
@@ -68,6 +74,10 @@ export default {
   },
   methods: {
     submitHandler() {
+      if (this.isValidEmail) {
+        this.valid.email = true;
+      }
+
       this.errors.email = this.isValidEmail ? "" : "Invalid email";
       this.errors.password = this.isValidPassword
         ? ""
