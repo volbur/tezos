@@ -10,6 +10,7 @@
     ></ui-input>
 
     <ui-input
+      :isValid="valid.password"
       type="password"
       placeholder="Password"
       :error="errors.password"
@@ -17,6 +18,7 @@
     ></ui-input>
 
     <ui-input
+      :isValid="valid.passwordConfirmation"
       type="password"
       placeholder="Password confirmation"
       :error="errors.passwordConfirmation"
@@ -74,9 +76,7 @@ export default {
   },
   methods: {
     submitHandler() {
-      if (this.isValidEmail) {
-        this.valid.email = true;
-      }
+      this.valid.email = this.isValidEmail ? true : false;
 
       this.errors.email = this.isValidEmail ? "" : "Invalid email";
       this.errors.password = this.isValidPassword
