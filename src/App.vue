@@ -77,6 +77,10 @@ export default {
   methods: {
     submitHandler() {
       this.valid.email = this.isValidEmail ? true : false;
+      this.valid.password = this.isValidPassword ? true : false;
+      this.valid.passwordConfirmation = this.isValidPasswordConfirmation
+        ? true
+        : false;
 
       this.errors.email = this.isValidEmail ? "" : "Invalid email";
       this.errors.password = this.isValidPassword
