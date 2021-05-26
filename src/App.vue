@@ -1,7 +1,6 @@
 <template>
   <form class="form" @submit.prevent="submitHandler">
     <h2 class="form__title">Login</h2>
-    <h3>email: {{ email }}</h3>
     <ui-input
       type="text"
       placeholder="Email"
