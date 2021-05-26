@@ -45,16 +45,20 @@ export default {
     };
   },
   computed: {
+    isValidEmail() {
+      return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(this.email);
+    },
+    isValidPassword() {
+      return this.password === "2";
+    },
+    isValidPasswordConfirmation() {
+      return this.password === this.passwordConfirmation;
+    },
     isValidForm() {
-      const isValidEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
-        this.email
-      );
-      const isValidPassword = this.password === "2";
-      const isValidPasswordConfirmation =
-        this.password === this.passwordConfirmation;
-
       const result =
-        isValidEmail && isValidPassword && isValidPasswordConfirmation;
+        this.isValidEmail &&
+        this.isValidPassword &&
+        this.isValidPasswordConfirmation;
 
       return result;
     },
