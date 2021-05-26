@@ -44,12 +44,26 @@ export default {
       },
     };
   },
+  computed: {
+    isValidForm() {
+      const isValidEmail = this.email.length >= 2;
+      const isValidPassword = this.password === "2";
+      const isValidPasswordConfirmation =
+        this.password === this.passwordConfirmation;
+
+      const result =
+        isValidEmail && isValidPassword && isValidPasswordConfirmation;
+
+      return result;
+    },
+  },
   methods: {
     submitHandler() {
-      console.log("email: ", this.email);
-      console.log("password: ", this.password);
-      console.log("passwordConfirmation: ", this.passwordConfirmation);
-      console.log("submit");
+      if (this.isValidForm) {
+        console.log("email: ", this.email);
+        console.log("password: ", this.password);
+        console.log("passwordConfirmation: ", this.passwordConfirmation);
+      }
     },
   },
   components: {
