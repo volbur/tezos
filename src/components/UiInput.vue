@@ -1,6 +1,7 @@
 <template>
   <div class="form__control">
     <input
+      :class="{ invalid: error }"
       :type="type"
       :placeholder="placeholder"
       :value="value"
@@ -43,9 +44,15 @@ input {
   background-color: #fff;
   color: #000000;
 }
+input.invalid {
+  border: 1px solid #d50d0d;
+}
+input.valid {
+  border: 1px solid #0bcd65;
+}
 .text-error {
   font-size: 12px;
   line-height: 15px;
-  color: rgba(0, 0, 0, 0.63);
+  color: #d50d0d;
 }
 </style>
