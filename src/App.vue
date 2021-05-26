@@ -46,7 +46,9 @@ export default {
   },
   computed: {
     isValidForm() {
-      const isValidEmail = this.email.length >= 2;
+      const isValidEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
+        this.email
+      );
       const isValidPassword = this.password === "2";
       const isValidPasswordConfirmation =
         this.password === this.passwordConfirmation;
