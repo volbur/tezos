@@ -43,6 +43,7 @@ export default {
         email: {
           value: "",
           error: "Invalid email",
+          
         },
         password: {
           value: "",
