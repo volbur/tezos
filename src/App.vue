@@ -33,12 +33,25 @@
 <script>
 import UiInput from "./components/UiInput";
 export default {
+  name: "App",
   components: {
     UiInput,
   },
-  name: "App",
   data() {
     return {
+      formData: {
+        value: {
+          email: "",
+          password: "",
+          passwordConfirmation: "",
+        },
+        errors: {
+          email: "Invalid email",
+          password:
+            "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.",
+          passwordConfirmation: "Password doesn’t match",
+        },
+      },
       email: "",
       password: "",
       passwordConfirmation: "",
