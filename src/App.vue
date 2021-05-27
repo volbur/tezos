@@ -25,7 +25,7 @@
       v-model="passwordConfirmation"
     ></ui-input>
 
-    <button class="btn" type="submit" disabled>Submit</button>
+    <button class="btn" type="submit" :disabled="isValidForm">Submit</button>
   </form>
 </template>
 
