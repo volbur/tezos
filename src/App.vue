@@ -82,7 +82,13 @@ export default {
     },
   },
   methods: {
-    submitHandler() {
+    showAlert(text) {
+      alert(text);
+    },
+    // resetValue(input) {
+
+    // }
+    submitHandler(event) {
       if (this.isValidForm) {
         console.log("email: ", this.formData.email.value);
         console.log("password: ", this.formData.password.value);
@@ -91,6 +97,20 @@ export default {
           this.formData.passwordConfirmation.value
         );
       }
+      this.showAlert("Вхід дозволено.");
+
+      this.formData.email.value = "";
+      this.formData.password.value = "";
+      this.formData.passwordConfirmation.value = "";
+
+      event.target.reset();
+
+      console.log("email: ", this.formData.email.value);
+      console.log("password: ", this.formData.password.value);
+      console.log(
+        "passwordConfirmation: ",
+        this.formData.passwordConfirmation.value
+      );
     },
   },
 };
