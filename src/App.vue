@@ -33,6 +33,9 @@
 <script>
 import UiInput from "./components/UiInput";
 export default {
+  components: {
+    UiInput,
+  },
   name: "App",
   data() {
     return {
@@ -75,9 +78,6 @@ export default {
         console.log("passwordConfirmation: ", this.passwordConfirmation);
       }
     },
-  },
-  components: {
-    UiInput,
   },
 };
 </script>
