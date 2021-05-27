@@ -25,7 +25,7 @@
       v-model="passwordConfirmation"
     ></ui-input>
 
-    <button class="btn" type="submit">Submit</button>
+    <button class="btn" type="submit" disabled>Submit</button>
   </form>
 </template>
 
@@ -120,5 +120,9 @@ export default {
   background-color: #ffbf2b;
   color: #fff;
   cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: auto;
 }
 </style>
