@@ -1,20 +1,21 @@
 <template>
-  <Header></Header>
-  <!-- <Form></Form> -->
+  <LoginPage></LoginPage>
 </template>
 
 
 <script>
-import Header from "./components/Header";
-// import Form from "./components/Form";
+import LoginPage from "./LoginPage";
 export default {
   name: "App",
   components: {
-    Header,
-    // Form,
+    LoginPage,
   },
 };
 </script>
 
 <style>
+.container {
+  margin: 0 auto;
+  max-width: 1240px;
+}
 </style>
