@@ -6,7 +6,7 @@
         :type="type"
         :placeholder="placeholder"
         :value="value"
-        @input="change"
+        @input="input"
       />
       <span>{{ placeholder }}</span>
     </label>
@@ -27,7 +27,7 @@ export default {
     error: String,
   },
   methods: {
-    change(event) {
+    input(event) {
       this.$emit("input", event.target.value);
     },
   },
