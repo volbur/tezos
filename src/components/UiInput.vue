@@ -36,7 +36,6 @@ export default {
     },
     blur() {
       this.isBlur = true;
-      console.log("blur");
     },
   },
 };
