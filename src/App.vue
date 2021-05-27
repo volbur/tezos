@@ -49,11 +49,6 @@ export default {
         password: "",
         passwordConfirmation: "",
       },
-      id: {
-        email: "input-email",
-        password: "input-password",
-        passwordConfirmation: "input-password-confirmation",
-      },
     };
   },
   computed: {
