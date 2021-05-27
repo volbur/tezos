@@ -5,7 +5,6 @@
         :class="{ invalid: isBlur || isFocus, valid: isValid }"
         :type="type"
         :placeholder="placeholder"
-        :value="value"
         @input="input"
         @blur="blur"
         @focus="focus"
@@ -31,7 +30,6 @@ export default {
       default: "button",
     },
     placeholder: String,
-    value: String,
     error: String,
   },
   methods: {
