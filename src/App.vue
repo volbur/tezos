@@ -13,8 +13,8 @@
       :isValid="isValidPassword"
       type="password"
       placeholder="Password"
-      :error="errors.password"
-      v-model="password"
+      :error="formData.errors.password"
+      v-model="formData.value.password"
     ></ui-input>
 
     <ui-input
@@ -70,7 +70,7 @@ export default {
       );
     },
     isValidPassword() {
-      return this.password.length === 8;
+      return this.formData.value.password.length === 8;
     },
     isValidPasswordConfirmation() {
       if (!this.isValidPassword) return false;
