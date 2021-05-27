@@ -48,11 +48,7 @@ export default {
   },
   computed: {
     isValidEmail() {
-      const isValid = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
-        this.email
-      );
-
-      return isValid;
+      return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(this.email);
     },
     isValidPassword() {
       return this.password.length === 8;
