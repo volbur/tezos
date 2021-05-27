@@ -2,6 +2,7 @@
   <form class="form" @submit.prevent="submitHandler">
     <h2 class="form__title">Login</h2>
     <ui-input
+      :id="id.email"
       :isValid="valid.email"
       type="text"
       placeholder="Email"
@@ -10,6 +11,7 @@
     ></ui-input>
 
     <ui-input
+      :id="id.password"
       :isValid="valid.password"
       type="password"
       placeholder="Password"
@@ -18,6 +20,7 @@
     ></ui-input>
 
     <ui-input
+      :id="id.passwordConfirmation"
       :isValid="valid.passwordConfirmation"
       type="password"
       placeholder="Password confirmation"
@@ -48,6 +51,11 @@ export default {
         email: "",
         password: "",
         passwordConfirmation: "",
+      },
+      id: {
+        email: "input-email",
+        password: "input-password",
+        passwordConfirmation: "input-password-confirmation",
       },
     };
   },

@@ -1,6 +1,8 @@
 <template>
   <div class="form__control">
+    <label :for="id">{{ placeholder }}</label>
     <input
+      :id="id"
       :class="{ invalid: error, valid: isValid }"
       :type="type"
       :placeholder="placeholder"
@@ -14,6 +16,7 @@
 <script>
 export default {
   props: {
+    id: String,
     isValid: Boolean,
     type: {
       type: String,
@@ -32,6 +35,19 @@ export default {
 </script>
 
 <style scoped>
+.form__control {
+  position: relative;
+}
+label {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: translateY(-50%);
+  padding: 0 7px;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #fff;
+}
 input {
   padding: 0 22px;
   width: 390px;
