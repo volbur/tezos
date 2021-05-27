@@ -12,7 +12,7 @@
       />
       <span :class="{ show: isBlur }">{{ placeholder }}</span>
     </label>
-    <p class="text-error" v-if="!isValid">{{ error }}</p>
+    <p class="text-error" v-if="isFocus && !isValid">{{ error }}</p>
   </div>
 </template>
 
