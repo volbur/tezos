@@ -1,13 +1,15 @@
 <template>
   <div class="form__control">
-    <label :for="id">{{ placeholder }}</label>
-    <input
-      :class="{ invalid: error, valid: isValid }"
-      :type="type"
-      :placeholder="placeholder"
-      :value="value"
-      @input="change"
-    />
+    <label>
+      <span>{{ placeholder }}</span>
+      <input
+        :class="{ invalid: error, valid: isValid }"
+        :type="type"
+        :placeholder="placeholder"
+        :value="value"
+        @input="change"
+      />
+    </label>
     <p class="text-error" v-if="error">{{ error }}</p>
   </div>
 </template>
@@ -36,7 +38,7 @@ export default {
 .form__control {
   position: relative;
 }
-label {
+span {
   position: absolute;
   top: 0;
   left: 20px;
