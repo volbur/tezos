@@ -1,29 +1,29 @@
 <template>
   <form class="form" @submit.prevent="submitHandler">
     <h2 class="form__title">Login</h2>
-    <ui-input
+    <UiInput
       :isValid="isValidEmail"
       type="text"
       placeholder="Email"
       :error="formData.email.error"
       v-model="formData.email.value"
-    ></ui-input>
+    ></UiInput>
 
-    <ui-input
+    <UiInput
       :isValid="isValidPassword"
       type="password"
       placeholder="Password"
       :error="formData.password.error"
       v-model="formData.password.value"
-    ></ui-input>
+    ></UiInput>
 
-    <ui-input
+    <UiInput
       :isValid="isValidPasswordConfirmation"
       type="password"
       placeholder="Password confirmation"
       :error="formData.passwordConfirmation.error"
       v-model="formData.passwordConfirmation.value"
-    ></ui-input>
+    ></UiInput>
 
     <button class="btn" :disabled="!isValidForm">Submit</button>
   </form>
