@@ -1,7 +1,6 @@
 <template>
   <div class="form__control">
     <label>
-      <span>{{ placeholder }}</span>
       <input
         :class="{ invalid: error, valid: isValid }"
         :type="type"
@@ -9,6 +8,7 @@
         :value="value"
         @input="change"
       />
+      <span>{{ placeholder }}</span>
     </label>
     <p class="text-error" v-if="error">{{ error }}</p>
   </div>
@@ -39,6 +39,7 @@ export default {
   position: relative;
 }
 span {
+  display: none;
   position: absolute;
   top: 0;
   left: 20px;
@@ -59,6 +60,9 @@ input {
   line-height: 20px;
   background-color: #fff;
   color: #000000;
+}
+input:focus + span {
+  display: block;
 }
 input.invalid {
   border: 1px solid #d50d0d;
