@@ -5,8 +5,8 @@
       :isValid="isValidEmail"
       type="text"
       placeholder="Email"
-      :error="errors.email"
-      v-model="email"
+      :error="formData.errors.email"
+      v-model="formData.value.email"
     ></ui-input>
 
     <ui-input
@@ -65,7 +65,9 @@ export default {
   },
   computed: {
     isValidEmail() {
-      return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(this.email);
+      return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
+        this.formData.value.email
+      );
     },
     isValidPassword() {
       return this.password.length === 8;
