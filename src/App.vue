@@ -60,7 +60,7 @@ export default {
       return isValid;
     },
     isValidPassword() {
-      return this.password === "2";
+      return this.password.length === 8;
     },
     isValidPasswordConfirmation() {
       if (!this.isValidPassword) return false;
