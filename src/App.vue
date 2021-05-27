@@ -67,7 +67,7 @@ export default {
       return this.formData.password.value.length === validLength;
     },
     isValidPasswordConfirmation() {
-      if (!this.isValidPassword) return false;
+      if (!this.isValidPassword) return;
       return (
         this.formData.password.value ===
         this.formData.passwordConfirmation.value
