@@ -2,16 +2,17 @@
   <div class="form__control">
     <label>
       <input
-        :class="{ invalid: isBlur, valid: isValid }"
+        :class="{ invalid: isBlur || isFocus, valid: isValid }"
         :type="type"
         :placeholder="placeholder"
         :value="value"
         @input="input"
         @blur="blur"
+        @focus="focus"
       />
       <span :class="{ show: isBlur }">{{ placeholder }}</span>
     </label>
-    <p class="text-error" v-if="error">{{ error }}</p>
+    <p class="text-error" v-if="!isValid">{{ error }}</p>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {
   data() {
     return {
       isBlur: false,
+      isFocus: false,
     };
   },
   props: {
@@ -38,6 +40,9 @@ export default {
     },
     blur() {
       this.isBlur = true;
+    },
+    focus() {
+      this.isFocus = true;
     },
   },
 };
@@ -77,9 +82,6 @@ input {
 }
 input:focus + span {
   display: block;
-}
-input:focus {
-  border-color: #d50d0d;
 }
 .show {
   display: block;

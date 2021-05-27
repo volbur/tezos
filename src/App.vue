@@ -40,7 +40,7 @@ export default {
       password: "",
       passwordConfirmation: "",
       errors: {
-        email: "",
+        email: "Invalid email",
         password: "",
         passwordConfirmation: "",
       },
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     submitHandler() {
-      this.errors.email = this.isValidEmail ? "" : "Invalid email";
+      // this.errors.email = this.isValidEmail ? "" : "Invalid email";
       this.errors.password = this.isValidPassword
         ? ""
         : "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.";
