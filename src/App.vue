@@ -21,8 +21,8 @@
       :isValid="isValidPasswordConfirmation"
       type="password"
       placeholder="Password confirmation"
-      :error="errors.passwordConfirmation"
-      v-model="passwordConfirmation"
+      :error="formData.errors.passwordConfirmation"
+      v-model="formData.value.passwordConfirmation"
     ></ui-input>
 
     <button class="btn" :disabled="!isValidForm">Submit</button>
@@ -74,7 +74,10 @@ export default {
     },
     isValidPasswordConfirmation() {
       if (!this.isValidPassword) return false;
-      return this.password === this.passwordConfirmation;
+      return (
+        this.formData.value.password ===
+        this.formData.value.passwordConfirmation
+      );
     },
     isValidForm() {
       const result =
@@ -88,9 +91,12 @@ export default {
   methods: {
     submitHandler() {
       if (this.isValidForm) {
-        console.log("email: ", this.email);
-        console.log("password: ", this.password);
-        console.log("passwordConfirmation: ", this.passwordConfirmation);
+        console.log("email: ", this.formData.value.email);
+        console.log("password: ", this.formData.value.password);
+        console.log(
+          "passwordConfirmation: ",
+          this.formData.value.passwordConfirmation
+        );
       }
     },
   },
