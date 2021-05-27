@@ -5,24 +5,24 @@
       :isValid="isValidEmail"
       type="text"
       placeholder="Email"
-      :error="formData.errors.email"
-      v-model="formData.value.email"
+      :error="formData.email.error"
+      v-model="formData.email.value"
     ></ui-input>
 
     <ui-input
       :isValid="isValidPassword"
       type="password"
       placeholder="Password"
-      :error="formData.errors.password"
-      v-model="formData.value.password"
+      :error="formData.password.error"
+      v-model="formData.password.value"
     ></ui-input>
 
     <ui-input
       :isValid="isValidPasswordConfirmation"
       type="password"
       placeholder="Password confirmation"
-      :error="formData.errors.passwordConfirmation"
-      v-model="formData.value.passwordConfirmation"
+      :error="formData.passwordConfirmation.error"
+      v-model="formData.passwordConfirmation.value"
     ></ui-input>
 
     <button class="btn" :disabled="!isValidForm">Submit</button>
@@ -40,16 +40,18 @@ export default {
   data() {
     return {
       formData: {
-        value: {
-          email: "",
-          password: "",
-          passwordConfirmation: "",
+        email: {
+          value: "",
+          error: "Invalid email",
         },
-        errors: {
-          email: "Invalid email",
-          password:
+        password: {
+          value: "",
+          error:
             "Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character.",
-          passwordConfirmation: "Password doesn’t match",
+        },
+        passwordConfirmation: {
+          value: "",
+          error: "Password doesn’t match",
         },
       },
     };
@@ -57,36 +59,36 @@ export default {
   computed: {
     isValidEmail() {
       return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(
-        this.formData.value.email
+        this.formData.email.value
       );
     },
     isValidPassword() {
-      return this.formData.value.password.length === 8;
+      const validLength = 8;
+      return this.formData.password.value.length === validLength;
     },
     isValidPasswordConfirmation() {
       if (!this.isValidPassword) return false;
       return (
-        this.formData.value.password ===
-        this.formData.value.passwordConfirmation
+        this.formData.password.value ===
+        this.formData.passwordConfirmation.value
       );
     },
     isValidForm() {
-      const result =
+      return (
         this.isValidEmail &&
         this.isValidPassword &&
-        this.isValidPasswordConfirmation;
-
-      return result;
+        this.isValidPasswordConfirmation
+      );
     },
   },
   methods: {
     submitHandler() {
       if (this.isValidForm) {
-        console.log("email: ", this.formData.value.email);
-        console.log("password: ", this.formData.value.password);
+        console.log("email: ", this.formData.email.value);
+        console.log("password: ", this.formData.password.value);
         console.log(
           "passwordConfirmation: ",
-          this.formData.value.passwordConfirmation
+          this.formData.passwordConfirmation.value
         );
       }
     },
