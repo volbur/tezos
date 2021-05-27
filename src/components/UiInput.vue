@@ -2,7 +2,6 @@
   <div class="form__control">
     <label :for="id">{{ placeholder }}</label>
     <input
-      :id="id"
       :class="{ invalid: error, valid: isValid }"
       :type="type"
       :placeholder="placeholder"
@@ -16,7 +15,6 @@
 <script>
 export default {
   props: {
-    id: String,
     isValid: Boolean,
     type: {
       type: String,
