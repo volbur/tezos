@@ -39,11 +39,11 @@ export default {
   },
   data() {
     return {
+      isBlur: false,
       formData: {
         email: {
           value: "",
           error: "Invalid email",
-          
         },
         password: {
           value: "",
@@ -86,10 +86,7 @@ export default {
     showAlert(text) {
       alert(text);
     },
-    // resetValue(input) {
-
-    // }
-    submitHandler(event) {
+    submitHandler() {
       if (this.isValidForm) {
         console.log("email: ", this.formData.email.value);
         console.log("password: ", this.formData.password.value);
@@ -99,19 +96,6 @@ export default {
         );
       }
       this.showAlert("Вхід дозволено.");
-
-      this.formData.email.value = "";
-      this.formData.password.value = "";
-      this.formData.passwordConfirmation.value = "";
-
-      event.target.reset();
-
-      console.log("email: ", this.formData.email.value);
-      console.log("password: ", this.formData.password.value);
-      console.log(
-        "passwordConfirmation: ",
-        this.formData.passwordConfirmation.value
-      );
     },
   },
 };
