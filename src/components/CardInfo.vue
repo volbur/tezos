@@ -11,7 +11,11 @@
         <span>Fees</span>
       </div>
 
-      <CardInfoRowItem></CardInfoRowItem>
+      <CardInfoRowItem
+        v-for="block in blocks"
+        :block="block"
+        :key="block.blockId"
+      ></CardInfoRowItem>
     </div>
   </div>
 </template>
@@ -21,6 +25,65 @@ import CardInfoRowItem from "./CardInfoRowItem";
 export default {
   components: {
     CardInfoRowItem,
+  },
+  data() {
+    return {
+      blocks: [],
+    };
+  },
+  methods: {
+    createdShortString(str) {
+      if (str.length > 21) {
+        const startString = str.slice(0, 11);
+        const endString = str.slice(-10);
+        return `${startString}...${endString}`;
+      }
+      return str;
+    },
+    createdDate(time) {
+      const date = new Date(time);
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+
+      return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+    },
+    async loadRow() {
+      const response = await fetch(
+        "https://api.teztracker.com/v2/data/tezos/mainnet/blocks"
+      );
+
+      const firebaseData = await response.json();
+
+      for (let i = 0; i < 4; i++) {
+        const obj = {
+          volume: firebaseData[i].volume,
+          fees: firebaseData[i].fees,
+          number_of_operations: firebaseData[i].number_of_operations,
+          сreated: this.createdDate(firebaseData[i].timestamp),
+          blockId: firebaseData[i].level,
+          baker: this.createdShortString(firebaseData[i].operationsHash),
+        };
+        this.blocks.push(obj);
+      }
+
+      // this.blocks = firebaseData.map((item) => {
+      //   return {
+      //     volume: item.volume,
+      //     fees: item.fees,
+      //     number_of_operations: item.number_of_operations,
+      //     сreated: this.createdDate(item.timestamp),
+      //     blockId: item.level,
+      //     baker: this.createdShortString(item.operationsHash),
+      //   };
+      // });
+    },
+  },
+  beforeMount() {
+    this.loadRow();
   },
 };
 </script>
