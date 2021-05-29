@@ -20,7 +20,7 @@
         <span>{{ blocks.fees }}</span>
       </div>
     </div>
-    <button @click="loadPeople">show data</button>
+    <button @click="loadRow">show data</button>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
     };
   },
   methods: {
-    async loadPeople() {
+    async loadRow() {
       const response = await fetch(
         "https://api.teztracker.com/v2/data/tezos/mainnet/blocks"
       );
