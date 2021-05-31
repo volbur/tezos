@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar container">
-    <a href="#" class="logo"><img src="img/logo.png" alt="logo" /></a>
+    <a href="#" class="logo"><img src="img/logo.svg" alt="logo" /></a>
     <ul class="nav-list">
       <li class="nav-item"><a href="#">Home</a></li>
       <li class="nav-item"><a href="#">Login</a></li>

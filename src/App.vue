@@ -1,14 +1,14 @@
 <template>
-  <CardInfo></CardInfo>
+  <MainPage></MainPage>
 </template>
 
 
 <script>
-import CardInfo from "./components/CardInfo";
+import MainPage from "./MainPage";
 export default {
   name: "App",
   components: {
-    CardInfo,
+    MainPage,
   },
 };
 </script>

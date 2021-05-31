@@ -106,6 +106,7 @@ export default {
 .card-info__row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: row dense;
   padding: 20px 30px 22px;
   border-bottom: 1px solid #ecf4ff;
 }
