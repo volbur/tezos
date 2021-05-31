@@ -4,7 +4,7 @@
 
 
 <script>
-import LoginPage from "./LoginPage";
+import LoginPage from "./views/LoginPage";
 export default {
   name: "App",
   components: {

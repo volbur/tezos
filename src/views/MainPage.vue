@@ -131,9 +131,9 @@
 </template>
 
 <script>
-import NavBar from "./components/NavBar";
-import CardInfo from "./components/CardInfo";
-import Footer from "./components/Footer";
+import NavBar from "../components/NavBar";
+import CardInfo from "../components/CardInfo";
+import Footer from "../components/Footer";
 
 export default {
   components: {
