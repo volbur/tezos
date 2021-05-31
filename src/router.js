@@ -1,7 +1,7 @@
-import { createRouter } from "vue-router";
-import LoginPage from "./views/LoginPage";
+// import { createRouter, createWebHistory } from "vue-router";
+// import LoginPage from "./views/LoginPage";
 
-createRouter({
-  history: "",
-  routes: [{ path: "/login", component: LoginPage }],
-});
+// export default createRouter({
+//   history: createWebHistory(),
+//   routes: [{ path: "/login", component: LoginPage }],
+// });
