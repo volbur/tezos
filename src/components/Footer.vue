@@ -36,7 +36,7 @@ export default {
 
 <style>
 .footer {
-  padding: 20px 0 30px;
+  padding: 7px 0 30px;
   background-color: #2b7df7;
 }
 .footer .nav-bar {

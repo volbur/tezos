@@ -95,6 +95,7 @@ export default {
   border: 1px solid #c8c5ef;
   box-shadow: 0px 10px 40px rgba(36, 21, 220, 0.1);
   border-radius: 4px;
+  background-color: #fff;
 }
 .card-info__title {
   margin: 0;

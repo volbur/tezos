@@ -1,15 +1,21 @@
 <template>
-  <div class="nav-bar container">
-    <a href="#" class="logo"><img src="img/logo.svg" alt="logo" /></a>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#">Home</a></li>
-      <li class="nav-item"><a href="#">Login</a></li>
-    </ul>
-  </div>
+  <nav class="nav">
+    <div class="nav-bar container">
+      <a href="#" class="logo"><img src="img/logo.svg" alt="logo" /></a>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 
 <style scoped>
+.nav {
+  padding: 12px 0;
+  background: #2b7df7;
+}
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -34,6 +40,6 @@
 }
 .nav-item a:hover {
   border-color: #ffbf2b;
-  color: #ffbf2b;
+  background-color: #ffbf2b;
 }
 </style>
