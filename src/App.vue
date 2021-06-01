@@ -1,15 +1,12 @@
 <template>
-  <LoginPage></LoginPage>
+  <router-view />
 </template>
 
 
 <script>
-import LoginPage from "./views/LoginPage";
 export default {
   name: "App",
-  components: {
-    LoginPage,
-  },
+  components: {},
 };
 </script>
 
@@ -18,6 +15,12 @@ export default {
   margin: 0 auto;
   max-width: 1240px;
 }
+@media (max-width: 940px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -62,6 +62,7 @@ span {
   color: rgba(0, 0, 0, 0.8);
 }
 input {
+  margin: 0 auto;
   padding: 0 22px;
   width: 390px;
   height: 60px;

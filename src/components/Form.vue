@@ -103,11 +103,15 @@ export default {
 <style>
 .form {
   margin: 0 auto;
-  padding: 37px 108px 40px;
-  width: 390px;
+  padding: 37px 0 40px;
+  width: 605px;
   background: #ecf4ff;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+}
+.form__control {
+  width: 390px;
+  margin: 0 auto;
 }
 .form__control:not(:last-child) {
   margin-bottom: 30px;
@@ -136,4 +140,15 @@ export default {
   opacity: 0.5;
   cursor: auto;
 }
+
+/* @media (max-width: 940px) {
+  .form {
+    margin: 0 auto;
+    padding: 37px 108px 40px;
+    width: 390px;
+    background: #ecf4ff;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+} */
 </style>
