@@ -3,10 +3,9 @@
     <header class="header">
       <div class="header__wrapper">
         <NavBar></NavBar>
-        <div class="header__container container">
-          <Form></Form>
-        </div>
+        <Form></Form>
       </div>
+      <div class="strip"></div>
     </header>
     <main class="main"></main>
     <Footer></Footer>
@@ -31,19 +30,19 @@ export default {
   margin-bottom: 156px;
 }
 .header {
-  padding-bottom: 160px;
+  position: relative;
+  width: 100%;
+  min-height: 825px;
   background-image: url("/img/bg-header.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
 }
 .header__wrapper {
   background-color: rgba(44, 125, 247, 0.67);
   width: 100%;
-}
-.header__container {
-  display: flex;
-  justify-content: space-between;
 }
 .header__img-logo {
   margin-bottom: 26px;
@@ -62,6 +61,18 @@ export default {
   font-size: 32px;
   line-height: 44px;
   color: #ffffff;
+}
+
+.strip {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  /* border-radius: 100% 100% 0 100%; */
+
+  background-color: #ffbf2b;
 }
 
 .main {
