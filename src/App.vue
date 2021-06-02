@@ -13,11 +13,18 @@ export default {
 <style>
 .container {
   margin: 0 auto;
+  padding: 0 40px;
   max-width: 1240px;
 }
-@media (max-width: 940px) {
+@media (max-width: 960px) {
   .container {
     max-width: 768px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 30px;
   }
 }
 

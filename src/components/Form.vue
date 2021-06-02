@@ -85,6 +85,9 @@ export default {
     showAlert(text) {
       alert(text);
     },
+    goToLogin() {
+      this.$router.push("/login");
+    },
     submitHandler() {
       if (this.isValidForm) {
         console.log("email: ", this.formData.email.value);
@@ -93,8 +96,9 @@ export default {
           "passwordConfirmation: ",
           this.formData.passwordConfirmation.value
         );
+        this.showAlert("Вхід дозволено.");
+        this.goToLogin();
       }
-      this.showAlert("Вхід дозволено.");
     },
   },
 };
